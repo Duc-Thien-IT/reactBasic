@@ -10,9 +10,10 @@ const Game = () => {
     const handleClick = (index) => {
         const boardCopy = [...Board];
         if(winner || boardCopy[index]) return;
-        boardCopy[index] = xIsNext ? "X" : "O"  ;
+        boardCopy[index] = xIsNext ? "X" : "O";
+        console.log(boardCopy[index]);
         setBoard(boardCopy);
-        setXIsNext(!xIsNext);    
+        setXIsNext((xIsNext) => ! xIsNext);    
     };
     return (
         <div>
